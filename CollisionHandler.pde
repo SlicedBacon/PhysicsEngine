@@ -10,5 +10,13 @@ public class CollisionHandler
     
   }
   
-  public float calcRectWidth
+  public float calcRectWidth(Rect rectIn)
+  {
+    return 0;
+  }
+  
+  public float calcRectHeight(Rect rectIn)
+  {
+    return 0;
+  }
 }

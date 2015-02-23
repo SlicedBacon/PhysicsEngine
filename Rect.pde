@@ -35,5 +35,12 @@ public class Rect extends Entity
     rectHeight = heightIn;
   }
   
+  //doer methods
   
+  //act method. called every frame
+  public void act()
+  {
+    rotate(radians(dir));
+    rect(x, y, rectWidth, rectHeight);
+  }
 }

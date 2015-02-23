@@ -1,5 +1,5 @@
-private int x = 0;
-private int y = 0;
+private float x = 0;
+private float y = 0;
 
 public class Actor
 {
@@ -14,22 +14,22 @@ public class Actor
     x = xIn;
   }
   
-  public int getX()
+  public float getX()
   {
     return x;
   }
   
-  public void setY(int yIn)
+  public void setY(float yIn)
   {
     y = yIn;
   }
   
-  public int getY()
+  public float getY()
   {
     return y;
   }
   
-  public void setPos(int xIn, int yIn)
+  public void setPos(float xIn, float yIn)
   {
     x = xIn;
     y = yIn;

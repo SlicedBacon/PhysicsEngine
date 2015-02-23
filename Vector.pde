@@ -4,7 +4,7 @@ private float yComp = 0;
 
 private float mag = 0;
 
-private float dir = 0;
+private float vecDir = 0;
 public class Vector
 {
   public Vector()
@@ -14,11 +14,11 @@ public class Vector
   
   public Vector(float dirIn, float magIn)
   {
-    dir = dirIn;
+    vecDir = dirIn;
     mag = magIn;
     
-    xComp = mag * cos(radians(-dir));
-    yComp = mag * sin(radians(-dir));
+    xComp = mag * cos(radians(-vecDir));
+    yComp = mag * sin(radians(-vecDir));
   }
   
   //setters and getters
@@ -54,25 +54,25 @@ public class Vector
   
   public void setDir(float dirIn)
   {
-    dir = dirIn;
+    vecDir = dirIn;
   }
   
   public float getDir()
   {
-    return dir;
+    return vecDir;
   }
   
   //various doer methods
   
   //adds a vector to the current vector
-  public void addVec(Vector vecIn) {\
+  public void addVec(Vector vecIn) {
   //add the x and y compnents appropriately
     xComp += vecIn.getX();
     yComp += vecIn.getY();
     
     //recalculate the magnitude and direction
     mag = (float) Math.sqrt(xComp*xComp + yComp*yComp);
-    float dirOut = acos((xComp / mag));
+    vecDir = acos((xComp / mag));
   }
   
   
@@ -97,19 +97,22 @@ public class Vector
   {
     if(mag != 0 && mag != 1)
     {
-      mag == 1;
+      mag = 1;
     }
     
     //recalculates the x component and y component
-    xComp = mag * cos(radians(-dir));
-    yComp = mag * sin(radians(-dir));
+    xComp = mag * cos(radians(-vecDir));
+    yComp = mag * sin(radians(-vecDir));
     
   }
   
+  
+  //converts the vector into an array of x and y components
   public float[] toArray()
   {
-    array = new float[2];
+    float[] array = new float[2];
     array[0] = xComp;
     array[1] = yComp;
+    return array;
   }
 }
