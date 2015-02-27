@@ -40,7 +40,11 @@ public class Rect extends Entity
   //act method. called every frame
   public void act()
   {
+    pushMatrix();
+    translate(x, y);
     rotate(radians(dir));
-    rect(x, y, rectWidth, rectHeight);
+    rect(0, 0, rectWidth, rectHeight);
+    popMatrix();
+    
   }
 }
